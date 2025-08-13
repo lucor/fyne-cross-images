@@ -40,7 +40,7 @@ pub fn build(b: *std.Build) void {
     xar.addIncludePath(.{ .cwd_relative = "/usr/include" });
     xar.addIncludePath(.{ .cwd_relative = "/usr/include/libxml2" });
     xar.addIncludePath(.{ .cwd_relative = "/usr/include/x86_64-linux-gnu" });
-    xar.defineCMacro("_GNU_SOURCE", "1");
+    xar.root_module.addCMacro("_GNU_SOURCE", "1");
 
     xar.addLibraryPath(.{ .cwd_relative = "/usr/lib/x86_64-linux-gnu" });
     xar.linkSystemLibrary("lzma");
@@ -70,7 +70,7 @@ pub fn build(b: *std.Build) void {
     xarexe.addIncludePath(.{ .cwd_relative = "/usr/include" });
     xarexe.addIncludePath(.{ .cwd_relative = "/usr/include/libxml2" });
     xarexe.addIncludePath(.{ .cwd_relative = "/usr/include/x86_64-linux-gnu" });
-    xarexe.defineCMacro("_GNU_SOURCE", "1");
+    xarexe.root_module.addCMacro("_GNU_SOURCE", "1");
 
     xarexe.linkLibrary(xar);
     xarexe.addLibraryPath(.{ .cwd_relative = "/usr/lib/x86_64-linux-gnu" });
