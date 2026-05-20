@@ -33,24 +33,24 @@ jobs:
 
     steps:
       - name: Setup Go environment
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           path: fyne-cross-images
 
       - name: Checkout fyne-cross repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
         with:
           repository: fyne-io/fyne-cross
           path: fyne-cross
           ref: develop
 
-      - name: Checkout calcultator repository
-        uses: actions/checkout@v3
+      - name: Checkout calculator repository
+        uses: actions/checkout@v6
         with:
           repository: fyne-io/calculator
           path: calculator
